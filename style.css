@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  position: fixed;
+  margin-top: 200px;
+  padding: 20px;
+  width: 150px;
+  border-radius: 20px;
+  border-style: none;
+  font-size: 20px;
+}
+h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 35%;
+  line-height: 2;
+}

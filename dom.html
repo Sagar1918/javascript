@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <div>
+      <p id="message">Javascript getElementBYId() selection</p>
+      <input type="radio" name="language" value="JS" />
+      <input type="radio" name="language" value="Python" />
+      <h1 class="marker">Hello Everyone</h1>
+      <div id="container">
+        <h1 class="marker">Welcome</h1>
+        <h1 class="marker">Welcome to the party</h1>
+      </div>
+    </div>
+    <script>
+      let msg = document.getElementById("message");
+      let inp = document.getElementsByName("language");
+      let heading = document.getElementsByTagName("h1");
+      let cont = document.getElementById("container");
+      let className = cont.getElementsByClassName("marker"); //Accessing child elements using parent id reference
+      let query = document.querySelector(".marker"); // CSS method
+      let query2 = document.querySelectorAll("div", "h1");
+      console.log(msg);
+      console.log(inp); //NodeList(2) [input, input]
+      console.log(heading); //HTMLCollection(3) [h1, h1, h1]
+      console.log(className); //HTMLCollection(3) [h1.marker, h1.marker, h1.marker]
+      console.log(query);
+      console.log(query2); //NodeList(2) [div, div#container]
+      console.log(query.parentNode);
+    </script>
+  </body>
+</html>

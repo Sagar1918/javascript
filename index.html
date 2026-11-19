@@ -1,65 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spider-Man</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Spider Man</h1>
-    <img src="assets/spiderman_img.png" id="mainImg" />
-    <h2>About</h2>
-    <p>
-      <b>Spider-Man</b> is a superhero appearing in American comic books
-      published by
-      <a href="https://www.google.com/search?q=Marvel+Comics">Marvel Comics</a>.
-      Created by writer-editor <b>Stan Lee</b> and artist <b>Steve Ditko</b>, he
-      first appeared in the anthology comic book
-      <a href="https://www.google.com/search?q=Amazing+Fantasy"
-        >Amazing Fantasy</a
-      >
-      #15 (August 1962) in the <a href="#">Silver Age of Comic Books</a>. He has
-      been featured in comic books, television shows, films, video games,
-      novels, and plays
-    </p>
-
-    <div class="box">
-      <h4>Publication Info</h4>
-      <ul>
-        <li><a href="#" class="boxLink">Publisher</a></li>
-        <li><a href="#" class="boxLink">First Appearance</a></li>
-        <li>
-          Created by
-          <ul>
-            <li><a href="#" class="boxLink">Stan Lee</a></li>
-            <li><a href="#" class="boxLink">Steve Ditko</a></li>
-          </ul>
-        </li>
-      </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case &amp; RFI Support</title>
+  <style>
+    :root {
+      --ink: #16212e;
+      --muted: #5b6776;
+      --line: #e3e7ec;
+      --bg: #f6f7f9;
+      --accent: #0b5cab;
+      --accent-ink: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-weight: 700; letter-spacing: -0.01em; }
+    .brand span { color: var(--accent); }
+    .hero { padding: 64px 0 40px; }
+    .hero h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; max-width: 640px; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 0 28px; }
+    .btn {
+      display: inline-block; border: 0; cursor: pointer;
+      background: var(--accent); color: var(--accent-ink);
+      font: inherit; font-weight: 600; padding: 12px 22px; border-radius: 8px;
+    }
+    .btn:disabled { opacity: .55; cursor: default; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; padding-bottom: 48px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+    .card h2 { font-size: 1.05rem; margin: 0 0 8px; }
+    .card p, .card li { color: var(--muted); font-size: .95rem; margin: 0; }
+    .card ul { margin: 0; padding-left: 18px; }
+    .note { font-size: .85rem; color: var(--muted); margin-top: 12px; }
+    #status { margin-left: 12px; font-size: .9rem; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 20px 0; color: var(--muted); font-size: .85rem; background: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <div class="brand">Case &amp; RFI <span>Support</span></div>
+      <div style="color:var(--muted);font-size:.9rem">Registered users only</div>
     </div>
+  </header>
 
-    <h2>Creation & Development</h2>
-    <p id="description">
-      In 1962, with the success of the Fantastic Four, Marvel Comics editor and
-      head writer Stan Lee was casting for a new superhero idea. He said the
-      idea for Spider-Man arose from a surge in teenage demand for comic books
-      and the desire to create a character with whom teens could identify. As
-      with Fantastic Four, Lee saw Spider-Man as an opportunity to "get out of
-      his system" what he felt was missing in comic books. In his autobiography,
-      Lee cites the non-superhuman pulp magazine crime fighter the Spider as a
-      great influence, and in a multitude of print and video interviews, Lee
-      stated he was further inspired by seeing a spider climb up a wall—adding
-      in his autobiography that he has told that story so often he has become
-      unsure of whether or not this is true.
-    </p>
-    <div class="images">
-      <img src="assets/creation_1.png" class="oldImg" />
-      <img src="assets/creation_2.jpeg" class="oldImg" />
-      <img src="assets/creation_3.jpeg" class="oldImg" />
-    </div>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Log a support case or an RFI in a couple of minutes.</h1>
+      <p>Chat with our assistant. It asks for each detail, shows you the options to choose from, confirms everything with you, and gives you a case number at the end. It only creates cases and RFIs.</p>
+      <button class="btn" id="openChat" disabled>Start a chat</button>
+      <span id="status">Loading chat…</span>
+      <p class="note">You can also use the chat button in the bottom-right corner.</p>
+    </section>
 
-    <script src="app.js"></script>
-  </body>
+    <section class="grid">
+      <div class="card">
+        <h2>Support case</h2>
+        <ul>
+          <li>Your registered email address</li>
+          <li>Subject and description</li>
+          <li>Priority, case type and case reason</li>
+          <li>Product, phone and company (optional)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>RFI case</h2>
+        <ul>
+          <li>Everything for a support case, plus</li>
+          <li>Request type (one or more), country, due date</li>
+          <li>Requesting party and business line</li>
+          <li>Each RFI question, one at a time</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Who can use this</h2>
+        <p>Only people with an active Salesforce user account can create cases. The case, and every RFI question on it, is owned by that user.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Powered by Salesforce Agentforce.</div>
+  </footer>
+
+  <!-- ===== Salesforce Embedded Messaging (Case & RFI Support Agent) ===== -->
+  <script type="text/javascript">
+    // Values from Setup > Embedded Service Deployments > Case Support Web Chat > Code Snippet.
+    var SF_CONFIG = {
+      orgId: "00DgK00000M2yZi",
+      deploymentName: "Case_Support_Web_Chat",
+      siteUrl: "https://orgfarm-374988fbd5-dev-ed.develop.my.site.com/ESWCaseSupportW1795071936698",
+      scrt2URL: "https://orgfarm-374988fbd5-dev-ed.develop.my.salesforce-scrt.com"
+    };
+
+    function setStatus(text) { document.getElementById('status').textContent = text; }
+
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US';
+        embeddedservice_bootstrap.init(
+          SF_CONFIG.orgId,
+          SF_CONFIG.deploymentName,
+          SF_CONFIG.siteUrl,
+          { scrt2URL: SF_CONFIG.scrt2URL }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+        setStatus('Chat could not load. Please try again later.');
+      }
+    }
+
+    window.addEventListener('onEmbeddedMessagingReady', function () {
+      var btn = document.getElementById('openChat');
+      btn.disabled = false;
+      setStatus('Chat is ready.');
+      btn.addEventListener('click', function () {
+        embeddedservice_bootstrap.utilAPI.launchChat();
+      });
+    });
+
+    (function loadBootstrap() {
+      if (SF_CONFIG.siteUrl.indexOf('REPLACE_WITH') === 0) {
+        setStatus('Chat is not configured yet (site URL missing).');
+        return;
+      }
+      var s = document.createElement('script');
+      s.src = SF_CONFIG.siteUrl + '/assets/js/bootstrap.min.js';
+      s.onload = initEmbeddedMessaging;
+      s.onerror = function () { setStatus('Chat could not load. Check the site URL and CORS settings.'); };
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
 </html>
